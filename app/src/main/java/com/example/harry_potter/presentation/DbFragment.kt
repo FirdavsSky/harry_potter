@@ -36,22 +36,24 @@ class DbFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        viewModel.initDao(requireActivity().application)
+
         binding.btnAdd.setOnClickListener {
 
             viewModel.onBtnAdd()
         }
         binding.btnUpdate.setOnClickListener {
 
-
+            viewModel.onUpdateBtn()
         }
         binding.btnDelete.setOnClickListener {
 
-
+            viewModel.onDeleteBtn()
         }
 
         viewLifecycleOwner.lifecycleScope.launch {
 
-            viewModel.allCharacters.collect{
+            viewModel.characters.collect{
 
                 binding.textView2.text = it.joinToString(separator = "\r\n")
             }

@@ -1,6 +1,7 @@
 package com.example.harry_potter.data.local.entity
 
 import androidx.room.ColumnInfo
+import androidx.room.Embedded
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
@@ -12,7 +13,9 @@ data class CharacterDb(
     @ColumnInfo(name = "name")
     val name: String,
     @ColumnInfo(name = "hogwarts_house")
-    val hogwartsHouse: String,
+    val hogwartsHouse: String = "",
     @ColumnInfo(name = "image_url")
-    val imageUrl: String
+    val imageUrl: String = "",
+    @Embedded(prefix = "wand_")
+    val wand: Wand?
 )
