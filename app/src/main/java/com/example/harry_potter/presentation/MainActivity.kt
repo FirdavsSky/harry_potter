@@ -5,6 +5,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.fragment.app.commit
 import com.example.harry_potter.R
 import com.example.harry_potter.databinding.ActivityMainBinding
 
@@ -20,5 +21,8 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
+        supportFragmentManager.commit {
+            add(R.id.container, MainFragment())
+        }
     }
 }
