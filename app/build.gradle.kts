@@ -66,6 +66,7 @@ dependencies {
 
     //Gson
     implementation("com.google.code.gson:gson:2.10.1")
+    implementation("com.squareup.retrofit2:converter-gson:2.11.0")
 
     //OkHttp
     implementation("com.squareup.okhttp3:okhttp:3.14.9")
